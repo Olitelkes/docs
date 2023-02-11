@@ -9,7 +9,7 @@ This example shows how to instantiate a Polkadot API object and use it to connec
 const { ApiPromise } = require('@polkadot/api');
 
 // Known account we want to use (available on dev chain, with funds)
-const Alice = '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY';
+const ALICE = '5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY';
 
 async function main () {
   // Create an await for the API
@@ -19,7 +19,7 @@ async function main () {
   // that resolves to the current on-chain value
   let { data: { free: previousFree }, nonce: previousNonce } = await api.query.system.account(Alice);
 
-  console.log(`${Alice} has a balance of ${previousFree}, nonce ${previousNonce}`);
+  console.log(`${ALICE} has a balance of ${previousFree}, nonce ${previousNonce}`);
   console.log(`You may leave this example running and start example 06 or transfer any value to ${Alice}`);
 
   // Here we subscribe to any balance changes and update the on-screen value
